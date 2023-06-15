@@ -1,8 +1,9 @@
 <?php
-    include "header.php";
+include "header.php";
 ?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,192L30,186.7C60,181,120,171,180,170.7C240,171,300,181,360,186.7C420,192,480,192,540,170.7C600,149,660,107,720,117.3C780,128,840,192,900,213.3C960,235,1020,213,1080,181.3C1140,149,1200,107,1260,96C1320,85,1380,107,1410,117.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#000000" fill-opacity="1" d="M0,192L30,186.7C60,181,120,171,180,170.7C240,171,300,181,360,186.7C420,192,480,192,540,170.7C600,149,660,107,720,117.3C780,128,840,192,900,213.3C960,235,1020,213,1080,181.3C1140,149,1200,107,1260,96C1320,85,1380,107,1410,117.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+</svg>
 <div class="container-form">
   <?php
   $alertMessage = "";
@@ -31,7 +32,6 @@
                             Nama menu sudah ada dalam database!
                           </div>';
             header("refresh:1.8; url=add_menu.php");
-
           } else {
             if ($conn->query($sql) === TRUE) {
               $alertMessage = '<div class="alert alert-success" role="alert">Menu berhasil ditambahkan!</div>';
@@ -56,14 +56,16 @@
   ?>
 
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" class="form-add-menu">
-    <center><h1>Add Menu</h1></center>
+    <center>
+      <h1>Add Menu</h1>
+    </center>
     <?php echo $alertMessage; ?>
     <label for="nama_menu" class="label-nama-menu">Nama Menu:</label>
     <input type="text" name="nama_menu" id="nama_menu" required class="input-nama-menu" placeholder="Enter Menu Name">
-
+    <!-- Nioka666 -->
     <label for="harga_menu" class="label-harga-menu">Price (USD):</label>
     <input type="text" name="harga_menu" id="harga_menu" required class="input-harga-menu" placeholder="Ex : 10.99">
-
+    <!-- Nioka666 -->
     <select name="kategori" id="kategori" required class="input-kategori">
       <option value="" selected disabled>Select Category</option>
       <option value="maincourse" <?php echo (isset($kategori) && $kategori == "maincourse") ? "selected" : ""; ?>>Main Course</option>
@@ -87,7 +89,7 @@
     </div>
   </div>
 </div>
-
+<!-- Nioka666 -->
 <script>
   const fileInput = document.getElementById('gambar_menu');
   const uploadedFile = document.getElementById('uploaded-file');
