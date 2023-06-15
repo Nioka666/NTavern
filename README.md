@@ -47,5 +47,3 @@ This project is licensed under the MIT License. You are free to modify and distr
 We welcome contributions to NTavern. If you encounter any issues or have suggestions for improvements, please submit a pull request or open an issue on the repository.
 
 Thank you for your interest in NTavern! Together, let's create an exceptional restaurant management solution for French cuisine establishments.
-
-test test 1 2
