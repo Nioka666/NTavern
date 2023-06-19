@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/loading.css">
 </head>
-
 <body style="background-image: url(img/kitchen2.jpg); background-size: cover;">
   <div class="container">
     <div class="row">
@@ -38,7 +38,12 @@
                   <input type="password" class="form-control bi-eye" id="login-password" name="password" placeholder="Password" autocomplete="off" required>
                   <div class="invalid-feedback"></div>
                 </div>
-                <button type="submit" class="btn btn-light" style="margin-top: 7px; border-radius: 30px; height: 43px;"><b>Sign in</b></button>
+                <button type="submit" class="btn btn-warning btn-loading" style="margin-top: 7px; border-radius: 30px; height: 43px;">
+                  <b>Sign in</b>
+                  <span class="loading-icon">
+                    <i class="spinner-border text-black" style="margin-left: 100px; width: 20px; height: 20px;"></i>
+                  </span>
+                </button>
                 <center>
                   <h5>or Sign in with</h5><br>
                   <i class="bi bi-google" id="google"></i>
@@ -62,7 +67,12 @@
                   <input type="password" class="form-control" id="register-password" name="rpassword" placeholder="Set Password" autocomplete="off" required>
                   <div class="invalid-feedback"></div>
                 </div>
-                <button type="submit" class="btn btn-light" style="margin-top: 7px; border-radius: 30px; height: 44px;"><b>Register</b></button>
+                <button type="submit" class="btn btn-warning btn-loading" style="margin-top: 7px; border-radius: 30px; height: 43px;">
+                  <b>Register</b>
+                  <span class="loading-icon">
+                    <i class="spinner-border text-black" style="margin-left: 100px; width: 20px; height: 20px;"></i>
+                  </span>
+                </button>
                 <center>
                   <h5 style="cursor: pointer;">or Sign in with</h5><br>
                   <i class="bi bi-google" id="google"></i>
@@ -98,7 +108,7 @@
     function validateForm(form) {
       const inputs = form.querySelectorAll('input[required]');
       let isValid = true;
-      
+
       inputs.forEach(function(input) {
         if (!input.checkValidity()) {
           isValid = false;
@@ -109,7 +119,10 @@
       });
 
       if (isValid) {
-        form.submit();
+        showLoadingButton(form);
+        setTimeout(function() {
+          form.submit();
+        }, 1000);
       }
     }
 
@@ -125,6 +138,14 @@
       const errorContainer = formGroup.querySelector('.invalid-feedback');
       formGroup.classList.remove('was-validated');
       errorContainer.innerText = '';
+    }
+
+    function showLoadingButton(form) {
+      const button = form.querySelector('button[type="submit"]');
+      const loadingIcon = button.querySelector('.loading-icon');
+      button.disabled = true;
+      button.classList.add('loading');
+      loadingIcon.style.display = 'inline-block';
     }
   </script>
 </body>
