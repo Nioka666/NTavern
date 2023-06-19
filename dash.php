@@ -1,6 +1,11 @@
 <?php
+session_start();
 include "header.php";
-// include "koneksi.php";
+
+if (!isset($_SESSION["username"])) {
+  header("Location: index.php");
+  exit();
+}
 
 if (isset($_GET['status'])) {
     if ($_GET['status'] == 'success') {
@@ -17,7 +22,7 @@ $conn->close();
 
 <div class="container" style="background-image: url(img/r1.jpg)">
     <div>
-        <h1>Welcome <?= $users ?>!</h1>
+        <h1>Welcome <?= $_SESSION["username"] ?>!</h1>
         <p>Savor the culinary experience of Nioka Brasserie,<br>where every dish is a delight.</p>
         <a href="#main_course"><button>See More</button></a>
     </div>
@@ -95,6 +100,12 @@ $conn->close();
     }
 ?>
 </div>
+<script>
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+        window.history.go(1);
+    };
+</script>
 
 <?php
     include "footer.php";

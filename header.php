@@ -1,14 +1,16 @@
 <?php
-session_start();
 require_once('koneksi.php');
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if(!isset($_SESSION['username'])){
     header("location: index.php");
     exit();
 }else{
     $users = $_SESSION['username'];
-}
-?>
+}?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,9 +43,7 @@ if(!isset($_SESSION['username'])){
                 <a href="menu_manage.php"><i class="fas fa-utensils"></i><span>Menu Manage</span></a>
 
                 <a href="add_menu.php"><i class="fas fa-plus"></i><span>Add Menu</span></a>
-
-                <!-- <a href="menu_manage.php"><i class="fas fa-pencil-alt"></i><span>Edit Menu</span></a> -->
-
+                
                 <a href="logout.php"><i class="fas fa-sign-out-alt"></i><span>Log out</span></a>
             </div>
         <span class="close-btn" onclick="toggleSidebar()">

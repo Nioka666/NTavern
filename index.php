@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +27,7 @@
             </li>
           </ul>
           <div class="tab-content mt-3">
-            <!-- From Login -->
+            <!-- Form Login -->
             <div class="tab-pane fade show active" id="login-form">
               <form action="login.php" method="POST" novalidate>
                 <div class="form-group">
@@ -79,6 +80,39 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script>
+    const loginForm = document.querySelector('#login-form form');
+    const registerForm = document.querySelector('#register-form form');
+
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      validateForm(this);
+    });
+
+    registerForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      validateForm(this);
+    });
+
+    function validateForm(form) {
+      const inputs = form.querySelectorAll('input[required]');
+      let isValid = true;
+      
+      inputs.forEach(function(input) {
+        if (!input.checkValidity()) {
+          isValid = false;
+          showError(input, 'This field is required.');
+        } else {
+          clearError(input);
+        }
+      });
+
+      if (isValid) {
+        form.submit();
+      }
+    }
+
     function showError(input, message) {
       const formGroup = input.parentElement;
       const errorContainer = formGroup.querySelector('.invalid-feedback');
@@ -92,29 +126,6 @@
       formGroup.classList.remove('was-validated');
       errorContainer.innerText = '';
     }
-
-    document.querySelector('form').addEventListener('submit', function(event) {
-      const form = this;
-      event.preventDefault();
-      event.stopPropagation();
-
-      const inputs = form.querySelectorAll('input[required]');
-      let isValid = true;
-      inputs.forEach(function(input) {
-        if (!input.checkValidity()) {
-          isValid = false;
-          showError(input, input.validationMessage);
-        } else {
-          clearError(input);
-        }
-      });
-
-      if (!isValid) {
-        return;
-      }
-
-      form.submit();
-    });
   </script>
 </body>
 </html>
