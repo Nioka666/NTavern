@@ -38,7 +38,6 @@ $result_menu = $conn->query($sql_menu);
 </div>
 <div class="blog" id="main-course-blog">
     <?php if ($result_menu->num_rows > 0) : ?>
-        <?php $counter = 3; ?>
         <?php while ($row = $result_menu->fetch_assoc()) : ?>
             <?php if ($row['category'] === 'maincourse') : ?>
                 <?php $image_path = "img/" . $row['image']; ?>
@@ -77,7 +76,6 @@ $result_menu = $conn->query($sql_menu);
     <?php
     $result_menu->data_seek(0);
     if ($result_menu->num_rows > 0) : ?>
-        <?php $counter = 3; ?>
         <?php while ($row = $result_menu->fetch_assoc()) : ?>
             <?php if ($row['category'] === 'dessert') : ?>
                 <?php $image_path = "img/" . $row['image']; ?>
