@@ -10,79 +10,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/loading.css">
 </head>
 <body style="background-image: url(img/kitchen2.jpg); background-size: cover;">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 mx-auto mt-5">
-        <div class="login-container">
-          <h3 style="letter-spacing: 1.8px;"><span style="color: #dada00;">N</span>Tavern's</h3>
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login-form" style="font-weight: 500;">Sign in</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="register-tab" data-toggle="tab" href="#register-form" style="font-weight: 500;">Register</a>
-            </li>
-          </ul>
-          <div class="tab-content mt-3">
-            <!-- Form Login -->
-            <div class="tab-pane fade show active" id="login-form">
-              <form action="login.php" method="POST" novalidate>
-                <div class="form-group">
-                  <input type="text" class="form-control" id="login-username" name="username" placeholder="Username or Email" autocomplete="off" required>
-                  <div class="invalid-feedback"></div>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control bi-eye" id="login-password" name="password" placeholder="Password" autocomplete="off" required>
-                  <div class="invalid-feedback"></div>
-                </div>
-                <button type="submit" class="btn btn-warning btn-loading" style="margin-top: 7px; border-radius: 30px; height: 43px;">
-                  <b>Sign in</b>
-                  <span class="loading-icon">
-                    <i class="spinner-border text-black" style="margin-left: 100px; width: 20px; height: 20px;"></i>
-                  </span>
-                </button>
-                <center>
-                  <h5>or Sign in with</h5><br>
-                  <i class="bi bi-google" id="google"></i>
-                  <i class="bi bi-facebook" id="fb"></i>
-                  <i class="bi bi-twitter" id="twitter"></i>
-                </center>
-              </form>
-            </div>
-            <!-- Form Register -->
-            <div class="tab-pane fade" id="register-form">
-              <form action="register.php" method="POST" novalidate>
-                <div class="form-group">
-                  <input type="text" class="form-control" id="register-fullname" name="fullname" placeholder="Full Name" autocomplete="off" required>
-                  <div class="invalid-feedback"></div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" id="register-username" name="rusername" placeholder="Username or Email" autocomplete="off" required>
-                  <div class="invalid-feedback"></div>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control" id="register-password" name="rpassword" placeholder="Set Password" autocomplete="off" required>
-                  <div class="invalid-feedback"></div>
-                </div>
-                <button type="submit" class="btn btn-warning btn-loading" style="margin-top: 7px; border-radius: 30px; height: 43px;">
-                  <b>Register</b>
-                  <span class="loading-icon">
-                    <i class="spinner-border text-black" style="margin-left: 100px; width: 20px; height: 20px;"></i>
-                  </span>
-                </button>
-                <center>
-                  <h5 style="cursor: pointer;">or Sign in with</h5><br>
-                  <i class="bi bi-google" id="google"></i>
-                  <i class="bi bi-facebook" id="fb"></i>
-                  <i class="bi bi-twitter" id="twitter"></i>
-                </center>
-              </form>
-            </div>
+  <div class="login-container">
+    <h3 style="letter-spacing: 1.8px;">
+    <span style="color: #dada00;">N</span>Tavern's</h3>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login-form" style="font-weight: 500;">Sign in</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="register-tab" data-toggle="tab" href="#register-form" style="font-weight: 500;">Register</a>
+      </li>
+    </ul>
+    <div class="tab-content mt-3">
+      <!-- Form Login -->
+      <div class="tab-pane fade show active" id="login-form">
+        <form action="login.php" method="POST" novalidate>
+          <div class="form-group">
+            <input type="text" class="form-control" id="login-username" name="username" placeholder="Username or Email" autocomplete="off" required>
+            <div class="invalid-feedback"></div>
           </div>
-        </div>
+          <div class="form-group">
+            <input type="password" class="form-control bi-eye" id="login-password" name="password" placeholder="Password" autocomplete="off" required>
+            <div class="invalid-feedback"></div>
+          </div>
+          <button type="submit" class="btn btn-warning btn-loading" style="margin-top: 7px; border-radius: 30px; height: 43px;">
+            <b>Sign in</b>
+            <span class="loading-icon">
+              <i class="spinner-border text-black" style="margin-left: 100px; width: 20px; height: 20px;"></i>
+            </span>
+          </button>
+          <center>
+            <h5>or Sign in with</h5><br>
+            <i class="bi bi-google" id="google"></i>
+            <i class="bi bi-facebook" id="fb"></i>
+            <i class="bi bi-twitter" id="twitter"></i>
+          </center>
+        </form>
+      </div>
+      <!-- Form Register -->
+      <div class="tab-pane fade" id="register-form">
+        <form action="register.php" method="POST" novalidate>
+          <div class="form-group">
+            <input type="text" class="form-control" id="register-fullname" name="fullname" placeholder="Full Name" autocomplete="off" required>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="register-username" name="rusername" placeholder="Username or Email" autocomplete="off" required>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="register-password" name="rpassword" placeholder="Set Password" autocomplete="off" required>
+            <div class="invalid-feedback"></div>
+          </div>
+          <button type="submit" class="btn btn-warning btn-loading" style="margin-top: 7px; border-radius: 30px; height: 43px;">
+            <b>Register</b>
+            <span class="loading-icon">
+              <i class="spinner-border text-black" style="margin-left: 100px; width: 20px; height: 20px;"></i>
+            </span>
+          </button>
+          <center>
+            <h5 style="cursor: pointer;">or Sign in with</h5><br>
+            <i class="bi bi-google" id="google"></i>
+            <i class="bi bi-facebook" id="fb"></i>
+            <i class="bi bi-twitter" id="twitter"></i>
+          </center>
+        </form>
       </div>
     </div>
   </div>

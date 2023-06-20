@@ -1,19 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
-*{
-  font-family: 'Poppins';
+* {
+  font-family: "Poppins";
   color: rgb(0, 0, 0);
   box-sizing: border-box;
 }
 
 body {
+  background-image: url(img/kitchen2.jpg);
+  background-size: cover;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /*  */
   width: auto;
   margin: 0;
   padding: 0;
-  display: flex;
   justify-content: center;
-  align-items: center;
   background-color: black;
 }
 
@@ -26,155 +29,86 @@ h5 {
 }
 
 .login-container {
-    max-width: 465px;
-    margin: 0 auto;
-    position: sticky;
-    margin-top: -50px;
-    /* margin-top: -4px; */
-    padding: 44px 46px 48px 46px;
-    border: none;
-    border-radius: 15px;
-    background-color: #060606a3;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.098);
-    transition: height 0.4s ease-in-out;
-  }
-  
-  .login-container h3 {
-    color: white;
-    font-family: 'poppins';
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: bolder;
-  }
-  
-  .login-container .form-group label {
-    font-weight: 200;
-  }
-  
-  .btn-light {
-    background-color: #dada00;
-    color: black;
-    border: none;
-    width: 100%;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .btn-light:focus, .btn-light:active {
-    border: none !important;
-    box-shadow: none !important;
-    background-color: #dada00;
-  }
-  
-  .btn-light:hover {
-    background-color: #b4b400;
-    border-color: #b4b400;
-  }
-
-  /* Menggunakan font Poppins untuk kolom input */
-  input[type="text"],
-  input[type="password"] {
-    font-family: "Poppins", sans-serif;
-    color: #f1f1f1;
-    text-indent: 5px;
-    box-sizing: border-box;
-  }
-
-  /* Menggunakan font Poppins untuk placeholder pada kolom input */
-  input[type="text"]::placeholder,
-  input[type="password"]::placeholder {
-    font-family: "Poppins", sans-serif;
-    color: #818181;
-    padding-left: 2px;
-    box-sizing: border-box;
-    opacity: 1;
-  }
-
-  /* Mengubah warna teks input setelah diinput */
-  input[type="text"]:valid,
-  input[type="password"]:valid {
-    color: #dedede; 
-    box-sizing: border-box;
-  }
-
-  input[type="text"]:hover,
-  input[type="password"]:hover {
-    background-color: #323232dd;
-    color: #919191;
-    border:  none;
-    box-shadow: none;
-    padding-left: 12px;
-    box-sizing: border-box;
-  }
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-  background-color: #292929dd;
-  outline: none; /* Hapus outline bawaan pada beberapa browser */
-  color: #dedede; 
-  border:  #dada007c 2px solid;
-  box-shadow: none;
-  box-sizing: border-box;
-  padding-left: 10px;
+  width: 470px;
+  margin: auto;
+  position: sticky;
+  padding: 44px 46px 48px 46px;
+  border: none;
+  border-radius: 15px;
+  background-color: #060606a3;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.098);
+  transition: height 0.4s ease-in-out;
 }
 
-input.form-control {
-    border-radius: 10px;
-    margin-top: 20px;
-    background-color: #323232dd;
-    border: none;
-    height: 47px;
-    color: #9b9b9b;
+.login-container h3 {
+  color: white;
+  font-family: "poppins";
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bolder;
+}
+
+.login-container .form-group label {
+  font-weight: 200;
+}
+
+@media (max-width: 576px) {
+  .login-container {
+    max-width: 100%;
+    margin: 30px 17px;
+    padding: 44px 46px 48px 46px;
+    border-radius: 15px;
+  }
 }
 
 .nav-tabs {
-    border: none;
+  border: none;
 }
-  
+
 .nav-tabs .nav-link {
-    border: none;
-    margin-top: 17px;
-    margin-bottom: 8px;
-    color: rgb(255, 255, 255);
-    transition: color 0.3s ease-in-out;
+  border: none;
+  margin-top: 17px;
+  margin-bottom: 8px;
+  color: rgb(255, 255, 255);
+  transition: color 0.3s ease-in-out;
 }
-  
+
 .nav-tabs .nav-link.active {
-    background-color: #0063cc00;
-    color: #dada00;
-    border-bottom: 2px solid  #dada00;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    margin-bottom: 5px;
-    margin-top: 17px;
+  background-color: #0063cc00;
+  color: #dada00;
+  border-bottom: 2px solid #dada00;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 5px;
+  margin-top: 17px;
 }
-  
+
 .nav-tabs .nav-link:not(.active)::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: transparent;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    transform: scaleX(1);
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: scaleX(1);
 }
-  
+
 .nav-tabs .nav-link.active::after {
-    background-color:  #dada00;
-    transform: scaleX(1);
+  background-color: #dada00;
+  transform: scaleX(1);
 }
-  
+
 .nav-tabs .nav-link:not(.active):hover::after {
   background-color: transparent;
 }
-  
+
 .nav-tabs .nav-link.active::after {
-    transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
-  
-  /* Tambahkan transisi ke elemen di bawah tombol nav */
+
 .tab-pane {
   border: none;
   opacity: 0;
@@ -188,24 +122,118 @@ input.form-control {
   transform: translateY(0);
 }
 
-#fb, #twitter, #google {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    margin: 0px 9px 0px 9px;
-    top: 15px;
-    font-size: 25px;
-    color: #dedede;
+input[type="text"],
+input[type="password"] {
+  font-family: "Poppins", sans-serif;
+  color: #f1f1f1;
+  text-indent: 5px;
+  box-sizing: border-box;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #818181;
+  padding-left: 2px;
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+input[type="text"]:valid,
+input[type="password"]:valid {
+  color: #dedede;
+  box-sizing: border-box;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover {
+  background-color: #323232dd;
+  color: #919191;
+  border: none;
+  box-shadow: none;
+  padding-left: 12px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #292929dd;
+  outline: none;
+  /* Hapus outline bawaan pada beberapa browser */
+  color: #dedede;
+  border: #dada007c 2px solid;
+  box-shadow: none;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+input.form-control {
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: #323232dd;
+  border: none;
+  height: 47px;
+  color: #9b9b9b;
 }
 
 .invalid-feedback {
-      position: absolute;
-      left: 0;
-      background-color: #f8d7da00;
-      border: 1px solid #f8d7da00;
-      color: #721c2500;
-      padding: 8px;
-      margin-top: 5px;
-      border-radius: 4px;
-      font-size: 14px;
-    }
+  position: absolute;
+  left: 0;
+  background-color: #f8d7da00;
+  border: 1px solid #f8d7da00;
+  color: #721c2500;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-warning {
+  background-color: #dada00;
+  color: black;
+  border: none;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-warning:focus,
+.btn-warning::after,
+.btn-warning:default {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: #dada00 !important;
+}
+
+.btn-warning:hover,
+.btn-warning:active {
+  background-color: #b4b400 !important;
+  border-color: #b4b400 !important;
+}
+
+.btn-loading {
+  position: relative;
+}
+
+.btn-loading .loading-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.btn-loading.loading .loading-icon {
+  display: inline-block;
+}
+
+#fb,
+#twitter,
+#google {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  margin: 0px 9px 0px 9px;
+  top: 15px;
+  font-size: 25px;
+  color: #dedede;
+}
