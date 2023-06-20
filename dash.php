@@ -122,7 +122,7 @@ $result_menu = $conn->query($sql_menu);
         $('button').on('click', function() {
             if ($(this).text() === 'Order Now') {
                 $('#myModal').css('display', 'block');
-                $('body').css('overflow', 'hidden'); // Menyembunyikan scroll halaman
+                $('body').css('overflow', 'hidden');
             }
         });
 
@@ -150,7 +150,7 @@ $result_menu = $conn->query($sql_menu);
 
         function closeModal() {
             $('#myModal').css('display', 'none');
-            $('body').css('overflow', 'auto'); // Mengembalikan scroll halaman
+            $('body').css('overflow', 'auto');
         }
     });
 </script>
