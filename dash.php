@@ -22,9 +22,7 @@ $result_menu = $conn->query($sql_menu);
 
 <div class="container" style="background-image: url(img/r1.jpg)">
     <div>
-        <h1>Welcome
-            <?= $_SESSION["username"] ?>!
-        </h1>
+        <h1>Welcome<?= $_SESSION["username"] ?>!</h1>
         <p>Savor the culinary experience of Nioka Brasserie,<br>where every dish is a delight.</p>
         <a href="#main_course"><button>See More</button></a>
     </div>
@@ -43,7 +41,7 @@ $result_menu = $conn->query($sql_menu);
     </div>
 </div>
 <div class="blog">
-    <?php
+<?php
     if ($result_menu->num_rows > 0) {
         while ($row = $result_menu->fetch_assoc()) {
             if ($row['category'] === 'maincourse') {
@@ -64,7 +62,7 @@ $result_menu = $conn->query($sql_menu);
     } else {
         echo '<p>No main course menu found.</p>';
     }
-    ?>
+?>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path fill="#232323" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,218.7C384,235,480,245,576,245.3C672,245,768,235,864,240C960,245,1056,267,1152,266.7C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
