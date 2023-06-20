@@ -117,6 +117,7 @@ $result_menu = $conn->query($sql_menu);
             }
         });
     });
+    
     $(document).ready(function() {
         $('button').on('click', function() {
             if ($(this).text() === 'Order Now') {
