@@ -45,12 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $sql = "UPDATE menu SET image = '$imageName' WHERE id_menu = $id_menu";
 
       if ($conn->query($sql) === TRUE) {
-        
       } else {
         $alertMessage .= '<div id="alert-message" class="alert alert-danger" role="alert">
                     An error occurred. Failed to upload image.
                   </div>';
-
       }
     }
   }
@@ -74,11 +72,15 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,192L30,186.7C60,181,120,171,180,170.7C240,171,300,181,360,186.7C420,192,480,192,540,170.7C600,149,660,107,720,117.3C780,128,840,192,900,213.3C960,235,1020,213,1080,181.3C1140,149,1200,107,1260,96C1320,85,1380,107,1410,117.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#000000" fill-opacity="1" d="M0,192L30,186.7C60,181,120,171,180,170.7C240,171,300,181,360,186.7C420,192,480,192,540,170.7C600,149,660,107,720,117.3C780,128,840,192,900,213.3C960,235,1020,213,1080,181.3C1140,149,1200,107,1260,96C1320,85,1380,107,1410,117.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+</svg>
 
 <div class="container-form">
   <form action="<?php echo $_SERVER['PHP_SELF'] . '?id_menu=' . $id_menu; ?>" method="POST" enctype="multipart/form-data" class="form-add-menu">
-    <center><h1>Menu Data</h1></center>
+    <center>
+      <h1>Menu Data</h1>
+    </center>
     <?php echo $alertMessage; ?>
     <label for="nama_menu" class="label-nama-menu">Nama Menu :</label>
     <input type="text" name="nama_menu" id="nama_menu" required class="input-nama-menu" placeholder="Enter Menu Name" value="<?php echo $name; ?>">

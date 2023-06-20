@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "koneksi.php";
+include "config/config.php";
 
 if (isset($_POST['id'])) {
   $id = $_POST['id'];

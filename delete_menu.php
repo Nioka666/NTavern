@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+include "config/config.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $menuId = $_GET["id"];

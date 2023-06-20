@@ -1,5 +1,5 @@
 <?php
-require_once('koneksi.php');
+require_once('config/config.php');
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -14,6 +14,7 @@ if (!isset($_SESSION['username'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +27,7 @@ if (!isset($_SESSION['username'])) {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 </head>
+
 <body>
     <nav class="navbar" id="navbar">
         <a href="dash.php">

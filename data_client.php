@@ -20,7 +20,7 @@
 <div class="container-table">
   <div class="table-responsive">
   <?php
-    include "koneksi.php";
+    include "config/config.php";
 
     if (isset($_SESSION['success_message'])) {
       echo '<div id="success-message" class="alert alert-success" role="alert">' . $_SESSION['success_message'] . '</div>';
@@ -132,5 +132,5 @@
 </script>
 
 <?php
-include "footer.php";
+  include "footer.php";
 ?>
