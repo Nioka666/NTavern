@@ -117,32 +117,41 @@ $result_menu = $conn->query($sql_menu);
             }
         });
     });
-    
+
     $(document).ready(function() {
         $('button').on('click', function() {
             if ($(this).text() === 'Order Now') {
                 $('#myModal').css('display', 'block');
+                $('body').css('overflow', 'hidden'); // Menyembunyikan scroll halaman
             }
         });
 
         $('.modal-close').on('click', function() {
-            $('#myModal').css('display', 'none');
+            closeModal();
         });
 
         $('#confirmOrder').on('click', function() {
             alert('Order placed successfully!');
-            $('#myModal').css('display', 'none');
+            closeModal();
         });
-    });
 
-    $(document).ready(function() {
-        $(document).mouseup(function(e) {
-            var modal = $(".modal-content");
-
-            if (!modal.is(e.target) && modal.has(e.target).length === 0) {
-                $("#myModal").css("display", "none");
+        $(document).on('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
             }
         });
+
+        $(document).mouseup(function(e) {
+            var modal = $(".modal-content");
+            if (!modal.is(e.target) && modal.has(e.target).length === 0) {
+                closeModal();
+            }
+        });
+
+        function closeModal() {
+            $('#myModal').css('display', 'none');
+            $('body').css('overflow', 'auto'); // Mengembalikan scroll halaman
+        }
     });
 </script>
 

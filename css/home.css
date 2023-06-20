@@ -137,7 +137,7 @@ nav {
   width: 100%;
   padding: 20px;
   transition: background-color 0.3s ease-in-out;
-  z-index: 9999;
+  z-index: 990;
 }
 
 .navbar-fade {
@@ -967,8 +967,6 @@ select.input-kategori::after {
   color: #999;
 }
 
-/* Add these styles to your existing CSS */
-
 /* Modal */
 .modal {
   display: none;
@@ -980,17 +978,52 @@ select.input-kategori::after {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   overflow: auto;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal.hidden {
+  animation: fadeOut 0.3s ease-in-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 10% auto;
+  background-color: #363636;
+  margin: 75px auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
+  border: none;
+  width: 800px;
+  height: 450px;
   position: relative;
-  border-radius: 5px;
+  border-radius: 15px;
+  animation: fadeInModal 0.3s ease-in-out;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .modal-close {
@@ -1034,5 +1067,44 @@ select.input-kategori::after {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 999;
 }
+
+/* Additional Styles */
+
+.modal-header {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+.modal-body {
+  color: #fff;
+}
+
+.modal-footer {
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  text-align: right;
+}
+
+.modal-footer button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-footer button:hover {
+  background-color: #45a049;
+}
+
+
 
 
