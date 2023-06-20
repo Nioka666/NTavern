@@ -97,12 +97,22 @@ $result_menu = $conn->query($sql_menu);
     <?php endif; ?>
 </div>
 <div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close">&times;</span>
-        <h3>Order Confirmation</h3>
-        <p>Are you sure you want to place this order?</p>
-        <button id="confirmOrder">Confirm</button>
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>Order Confirmation</h3>
+    <p>Are you sure you want to place this order?</p>
+    <div class="menu-item">
+      <h4>Menu Item</h4>
+      <p>Price: <span class="price"></span></p>
+      <div class="quantity">
+        <button class="minus-btn">-</button>
+        <input type="text" class="qty-input" value="1">
+        <button class="plus-btn">+</button>
+      </div>
     </div>
+    <p>Total Price: <span id="totalPrice"></span></p>
+    <button id="confirmOrder">Confirm</button>
+  </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -119,40 +129,64 @@ $result_menu = $conn->query($sql_menu);
     });
 
     $(document).ready(function() {
-        $('button').on('click', function() {
-            if ($(this).text() === 'Order Now') {
-                $('#myModal').css('display', 'block');
-                $('body').css('overflow', 'hidden');
-            }
-        });
+  $('button').on('click', function() {
+    if ($(this).text() === 'Order Now') {
+      $('#myModal').css('display', 'block');
+      $('body').css('overflow', 'hidden');
+    }
+  });
 
-        $('.modal-close').on('click', function() {
-            closeModal();
-        });
+  $('.modal-close').on('click', function() {
+    closeModal();
+  });
 
-        $('#confirmOrder').on('click', function() {
-            alert('Order placed successfully!');
-            closeModal();
-        });
+  $('#confirmOrder').on('click', function() {
+    alert('Order placed successfully!');
+    closeModal();
+  });
 
-        $(document).on('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
+  $(document).on('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
 
-        $(document).mouseup(function(e) {
-            var modal = $(".modal-content");
-            if (!modal.is(e.target) && modal.has(e.target).length === 0) {
-                closeModal();
-            }
-        });
+  $(document).mouseup(function(e) {
+    var modal = $(".modal-content");
+    if (!modal.is(e.target) && modal.has(e.target).length === 0) {
+      closeModal();
+    }
+  });
 
-        function closeModal() {
-            $('#myModal').css('display', 'none');
-            $('body').css('overflow', 'auto');
-        }
-    });
+  $('.minus-btn').on('click', function() {
+    var quantityInput = $(this).siblings('.qty-input');
+    var currentQty = parseInt(quantityInput.val());
+    if (currentQty > 1) {
+      quantityInput.val(currentQty - 1);
+      updateTotalPrice();
+    }
+  });
+
+  $('.plus-btn').on('click', function() {
+    var quantityInput = $(this).siblings('.qty-input');
+    var currentQty = parseInt(quantityInput.val());
+    quantityInput.val(currentQty + 1);
+    updateTotalPrice();
+  });
+
+  function closeModal() {
+    $('#myModal').css('display', 'none');
+    $('body').css('overflow', 'auto');
+  }
+
+  function updateTotalPrice() {
+    var price = parseFloat($('.price').text());
+    var quantity = parseInt($('.qty-input').val());
+    var totalPrice = price * quantity;
+    $('#totalPrice').text(totalPrice.toFixed(2));
+  }
+});
+
 </script>
 
 <?php
