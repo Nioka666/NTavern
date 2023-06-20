@@ -48,7 +48,7 @@ $result_menu = $conn->query($sql_menu);
                     <div class="info">
                         <h3><?= $row['name'] ?></h3>
                         <span>USD $<?= $row['price'] ?></span>
-                        <button>Order Now</button>
+                        <button class="order-btn">Order Now</button>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </article>
@@ -86,7 +86,7 @@ $result_menu = $conn->query($sql_menu);
                     <div class="info">
                         <h3><?= $row['name'] ?></h3>
                         <span>USD $<?= $row['price'] ?></span>
-                        <button>Order Now</button>
+                        <button class="btn">Order Now</button>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </article>
@@ -95,6 +95,14 @@ $result_menu = $conn->query($sql_menu);
     <?php else : ?>
         <p>No dessert menu found.</p>
     <?php endif; ?>
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h3>Order Confirmation</h3>
+        <p>Are you sure you want to place this order?</p>
+        <button id="confirmOrder">Confirm</button>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -106,6 +114,32 @@ $result_menu = $conn->query($sql_menu);
                 $('html, body').animate({
                     scrollTop: target.offset().top
                 }, 800);
+            }
+        });
+    });
+    $(document).ready(function() {
+        $('button').on('click', function() {
+            if ($(this).text() === 'Order Now') {
+                $('#myModal').css('display', 'block');
+            }
+        });
+
+        $('.modal-close').on('click', function() {
+            $('#myModal').css('display', 'none');
+        });
+
+        $('#confirmOrder').on('click', function() {
+            alert('Order placed successfully!');
+            $('#myModal').css('display', 'none');
+        });
+    });
+
+    $(document).ready(function() {
+        $(document).mouseup(function(e) {
+            var modal = $(".modal-content");
+
+            if (!modal.is(e.target) && modal.has(e.target).length === 0) {
+                $("#myModal").css("display", "none");
             }
         });
     });

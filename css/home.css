@@ -966,3 +966,73 @@ select.input-kategori::after {
 .input-id-menu::placeholder {
   color: #999;
 }
+
+/* Add these styles to your existing CSS */
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hidden menu */
+.hidden-menu {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.hidden-menu.active {
+  display: block;
+}
+
+/* Backdrop effect */
+.modal-backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+
