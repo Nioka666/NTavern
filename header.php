@@ -5,12 +5,12 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if(!isset($_SESSION['username'])){
+if (!isset($_SESSION['username'])) {
     header("location: index.php");
     exit();
-}else{
+} else {
     $users = $_SESSION['username'];
-}?>
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,26 +28,27 @@ if(!isset($_SESSION['username'])){
 </head>
 <body>
     <nav class="navbar" id="navbar">
-        <a href="dash.php"><h1 class="navbar-title" style="letter-spacing: 1.8px;"><span style="color: yellow">N</span>Tavern's</h1>
+        <a href="dash.php">
+            <h1 class="navbar-title" style="letter-spacing: 1.8px;"><span style="color: yellow">N</span>Tavern's</h1>
         </a>
         <div class="navbar-toggler" onclick="toggleSidebar()">
             <i class="fas fa-bars"></i>
         </div>
-    <div class="sidebar" id="sidebar">
-        <h1 class="navbar-title" style="letter-spacing: 1.8px;"><span style="color: yellow">N</span>Tavern's</h1>
+        <div class="sidebar" id="sidebar">
+            <h1 class="navbar-title" style="letter-spacing: 1.8px;"><span style="color: yellow">N</span>Tavern's</h1>
             <div class="short">
                 <a href="dash.php"><i class="fas fa-home"></i><span>Dashboard</span></a>
 
                 <a href="data_client.php"><i class="fas fa-users"></i><span>Data Client</span></a>
-                
+
                 <a href="menu_manage.php"><i class="fas fa-utensils"></i><span>Menu Manage</span></a>
 
                 <a href="add_menu.php"><i class="fas fa-plus"></i><span>Add Menu</span></a>
-                
+
                 <a href="logout.php"><i class="fas fa-sign-out-alt"></i><span>Log out</span></a>
             </div>
-        <span class="close-btn" onclick="toggleSidebar()">
-            <i class="fas fa-times"></i>
-        </span>
-    </div>
-</nav>
+            <span class="close-btn" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+    </nav>
