@@ -19,8 +19,8 @@ if (isset($_SESSION['username'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="public/css/style.css">
 </head>
-
-<body style="background-image: url(public/img/kitchen2.jpg); background-size: cover;">
+<!-- <body style="background-image: url(public/img/kitchen2.jpg); background-size: cover;"> -->
+  <body>
   <div class="login-container">
     <h3 style="letter-spacing: 1.8px;">
       <span style="color: #dada00;">N</span>Tavern's
