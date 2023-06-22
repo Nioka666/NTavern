@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (isset($_SESSION['username'])) {
+  header("Location: public/dash.php");
+  exit();
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +17,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
-<body style="background-image: url(img/kitchen2.jpg); background-size: cover;">
+
+<body style="background-image: url(public/img/kitchen2.jpg); background-size: cover;">
   <div class="login-container">
     <h3 style="letter-spacing: 1.8px;">
-    <span style="color: #dada00;">N</span>Tavern's</h3>
+      <span style="color: #dada00;">N</span>Tavern's
+    </h3>
     <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login-form" style="font-weight: 500;">Sign in</a>
@@ -26,7 +36,7 @@
     <div class="tab-content mt-3">
       <!-- Form Login -->
       <div class="tab-pane fade show active" id="login-form">
-        <form action="login.php" method="POST" novalidate>
+        <form action="config/login.php" method="POST" novalidate>
           <div class="form-group">
             <input type="text" class="form-control" id="login-username" name="username" placeholder="Username or Email" autocomplete="off" required>
             <div class="invalid-feedback"></div>
@@ -51,7 +61,7 @@
       </div>
       <!-- Form Register -->
       <div class="tab-pane fade" id="register-form">
-        <form action="register.php" method="POST" novalidate>
+        <form action="config/register.php" method="POST" novalidate>
           <div class="form-group">
             <input type="text" class="form-control" id="register-fullname" name="fullname" placeholder="Full Name" autocomplete="off" required>
             <div class="invalid-feedback"></div>
@@ -142,5 +152,9 @@
       loadingIcon.style.display = 'inline-block';
     }
   </script>
+  
+  <!-- Adhim Niokagi
+       Github : Nioka666 -->
+
 </body>
 </html>

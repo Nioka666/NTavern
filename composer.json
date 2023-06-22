@@ -1,0 +1,6 @@
+{
+    "require": {
+        "symfony/apache-pack": "^1.0",
+        "psr/simple-cache": "^3.0"
+    }
+}
