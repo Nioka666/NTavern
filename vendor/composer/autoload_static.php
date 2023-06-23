@@ -7,21 +7,60 @@ namespace Composer\Autoload;
 class ComposerStaticInit459ad5722b79794527d1845de4b36f4e
 {
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Symfony\\Contracts\\Service\\' => 26,
+            'Symfony\\Contracts\\Cache\\' => 24,
+            'Symfony\\Component\\VarExporter\\' => 30,
+            'Symfony\\Component\\Cache\\' => 24,
+        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
+            'Psr\\Log\\' => 8,
+            'Psr\\Container\\' => 14,
+            'Psr\\Cache\\' => 10,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Contracts\\Service\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
+        'Symfony\\Contracts\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/cache-contracts',
+        ),
+        'Symfony\\Component\\VarExporter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-exporter',
+        ),
+        'Symfony\\Component\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/cache',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        '©' => __DIR__ . '/..' . '/symfony/cache/Traits/ValueWrapper.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

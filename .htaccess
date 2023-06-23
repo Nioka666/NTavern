@@ -1,7 +1,7 @@
 # turn off .htaccess
 <Files .htaccess>
-order allow,deny
-deny from all
+    order allow,deny
+    deny from all
 </Files>
 
 # turn off dir acces

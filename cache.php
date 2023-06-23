@@ -1,15 +1,13 @@
 <?php
-
 require 'vendor/autoload.php';
 
-use Cache\Adapter\PHPArray\ArrayCachePool;
 use Psr\SimpleCache\CacheInterface;
+use Symfony\Component\Cache\Simple\FilesystemCache;
 
 function getCache(): CacheInterface {
     static $cache = null;
-
     if ($cache === null) {
-        $cache = new ArrayCachePool();
+        $cache = new FilesystemCache();
     }
     return $cache;
 }
@@ -21,19 +19,17 @@ $items = [
     'config'
 ];
 
-foreach ($items as $item) {
+foreach ($items as $item){
     // checking
     if ($cache->has($item)) {
         $content = $cache->get($item);
     } else {
         $content = getContent($item);
-        $cache->set($item, $content);
+        $cache->set($item, $content, 7200);
     }
     echo $content;
 }
-
-function getContent($item)
-{
+function getContent($item){
     if (is_dir($item)) {
         $content = '';
         $files = scandir($item);
@@ -49,6 +45,8 @@ function getContent($item)
     }
     return $content;
 }
-    // Adhim Niokagi
-    // Github : Nioka666
+
+// Adhim Niokagi
+// Github: Nioka666
+
 ?>
