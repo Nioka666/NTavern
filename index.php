@@ -152,9 +152,8 @@ if (isset($_SESSION['username'])) {
       loadingIcon.style.display = 'inline-block';
     }
   </script>
-  
-  <!-- Adhim Niokagi
-       Github : Nioka666 -->
-
 </body>
 </html>
+
+<!-- Adhim Niokagi
+       Github : Nioka666 -->
