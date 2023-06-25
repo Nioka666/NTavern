@@ -8,8 +8,8 @@ if (isset($_SESSION['username'])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $user = $_POST["username"];
-  $pass = $_POST["password"];
+  $user = htmlspecialchars($_POST["username"]);
+  $pass = htmlspecialchars($_POST["password"]);
 
   if (!empty($user) && !empty($pass)) {
     $sql = "SELECT * FROM account WHERE username = ? AND password = ?";

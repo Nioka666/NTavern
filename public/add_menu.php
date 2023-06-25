@@ -10,11 +10,11 @@
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["add_menu"])) {
-      $kategori = $_POST["kategori"];
-      $nama_menu = $_POST["nama_menu"];
-      $harga_menu = $_POST["harga_menu"];
-      $gambar_menu = $_FILES["gambar_menu"]["name"];
-      $gambar_tmp = $_FILES["gambar_menu"]["tmp_name"];
+      $kategori = htmlspecialchars($_POST["kategori"]);
+      $nama_menu = htmlspecialchars($_POST["nama_menu"]);
+      $harga_menu = htmlspecialchars($_POST["harga_menu"]);
+      $gambar_menu = htmlspecialchars($_FILES["gambar_menu"]["name"]);
+      $gambar_tmp = htmlspecialchars($_FILES["gambar_menu"]["tmp_name"]);
 
       if (!empty($kategori) && !empty($nama_menu) && !empty($harga_menu)) {
         if (!empty($gambar_menu)) {
@@ -112,9 +112,9 @@
   });
 </script>
 
-<!-- Adhim Niokagi
-       Github : Nioka666 -->
-
 <?php
   include "footer.php";
 ?>
+
+<!-- Adhim Niokagi
+       Github : Nioka666 -->

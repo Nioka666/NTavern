@@ -3,9 +3,9 @@ session_start();
 require_once('config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $fullname = $_POST["fullname"];
-  $rusername = $_POST["rusername"];
-  $rpassword = $_POST["rpassword"];
+  $fullname = htmlspecialchars($_POST["fullname"]);
+  $rusername = htmlspecialchars($_POST["rusername"]);
+  $rpassword = htmlspecialchars($_POST["rpassword"]);
 
   if (empty($fullname) || empty($rusername) || empty($rpassword)) {
     $error = "Harap isi semua kolom!";

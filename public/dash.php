@@ -21,6 +21,7 @@ if (isset($_GET['status'])) {
 
 $sql_menu = "SELECT * FROM menu";
 $result_menu = $conn->query($sql_menu);
+
 ?>
 
 <div class="container" style="background-image: url(img/r1.jpg)">
@@ -37,8 +38,9 @@ $result_menu = $conn->query($sql_menu);
 <div class="content">
   <div class="hero" id="main_course">
     <h2>Maincourse</h2>
-    <p>Features a selection of our most sought-after and beloved dishes. From perfectly grilled premium steaks to tantalizingly sweet desserts, each item in our Poppulars menu is crafted to deliver an unforgettable culinary experience. Every bite will indulge your taste buds and satisfy your cravings for exceptional flavors.</p>
+    <p>Features a selection of our most sought-after and beloved dishes. From perfectly grilled premium steaks to tantalizingly sweet desserts, each item in our Poppulars menu is crafted to deliver an unforgettable culinary experience.</p>
   </div>
+  <img src="img/ger.png" alt="">
 </div>
 <div class="blog" id="main-course-blog">
   <?php if ($result_menu->num_rows > 0) : ?>
@@ -75,8 +77,9 @@ $result_menu = $conn->query($sql_menu);
 <div class="content">
   <div class="hero" id="dessert">
     <h2>Dessert</h2>
-    <p>Features a selection of our most sought-after and beloved dishes. From perfectly grilled premium steaks to tantalizingly sweet desserts, each item in our Poppulars menu is crafted to deliver an unforgettable culinary experience. Every bite will indulge your taste buds and satisfy your cravings for exceptional flavors.</p>
+    <p>Features a selection of our most sought-after and beloved dishes. From perfectly grilled premium steaks to tantalizingly sweet desserts, each item in our Poppulars menu is crafted to deliver an unforgettable culinary experience.</p>
   </div>
+  <img src="img/donn.png" class="dessert">
 </div>
 <div class="blog" id="dessert-blog">
   <?php
@@ -125,9 +128,9 @@ $result_menu = $conn->query($sql_menu);
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/script.js"></script>
 
-<!-- Adhim Niokagi
-       Github : Nioka666 -->
-
 <?php
   include "footer.php";
 ?>
+
+<!-- Adhim Niokagi
+     Github : Nioka666 -->

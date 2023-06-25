@@ -1,4 +1,8 @@
-/* Nioka*/
+/* 
+  Author : Adhim Niokagi
+  Github : Nioka666
+  Date : 24/06/23 -  N/A 
+*/
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
@@ -304,8 +308,13 @@ nav {
 }
 
 .container div h1 {
-  font-size: 36px;
-  margin-bottom: 21px;
+  font-size: 40px;
+  margin-bottom: -5px;
+}
+
+.container div p {
+  color: #ffffffce;
+  font-size: 18px;
 }
 
 .container div button {
@@ -376,7 +385,11 @@ nav {
   }
 }
 
+/* Content */
+
 .content {
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   height: auto;
   display: flex;
@@ -386,25 +399,120 @@ nav {
   margin-top: 0px;
 }
 
+/* @media screen and (max-width: 500px) {
+  .content {
+    max-width: 50%;
+    margin: 0 40px 0 40px;
+  }
+  .content h2, .content p {
+    font-size: 57px;
+    margin-left: 50px;
+  }
+} */
+
 .content .hero {
+  /* display: grid; */
   width: 650px;
   margin-top: -80px;
 }
 
 .content h2 {
-  color: #ffffffda;
+  text-align: start;
+  color: #ffffffed;
   font-family: "poppins";
-  font-size: 53px;
-  margin-bottom: 15px;
+  font-size: 72px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.562);
+  margin-bottom: 5px;
 }
 
 .content p {
+  text-align: start;
   font-family: "poppins";
-  color: #ffffff7e;
+  color: #ffffff55;
   font-weight: lighter;
-  font-size: 20px;
-  margin-top: 17px;
-  margin-bottom: 100px;
+  font-size: 24px;
+  line-height: 36px;
+  margin: 0 0 100px 0px;
+}
+
+.content img {
+  margin-left: 35px;
+  width: 370px;
+  height: 330px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.content img.dessert {
+  margin: 9px 0px 0 39px;
+  width: 320px;
+  height: 270px;
+  margin-bottom: -10px;
+}
+
+.content img:hover {
+  transform: scale(1.08) rotate(4deg);
+}
+
+@media screen and (max-width: 1055px){
+  .content img{
+    margin-top: -70px;
+  }
+}
+
+@media screen and (max-width: 1008px) {
+  .content img.dessert{
+    margin-top: -33px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .content {
+    max-width: 50%;
+    margin: 80px 70px 0 150px;
+    align-items: center;
+  }
+  .content h2 {
+    font-size: 62px;
+    margin-bottom: 0;
+  }
+  .content p {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  .content img{
+    margin: 10px 20px 0 10px;
+    width: 320px;
+    height: 270px;
+  }
+  .content img.dessert{
+    margin: 40px 0px 0 0;
+    width: 270px;
+    height: 230px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .content {
+    max-width: 25%;
+  }
+  .content h2 {
+    font-size: 50px;
+  }
+  .content p {
+    font-size: 14px;
+    line-height:normal;
+  }
+  .content img{
+    margin-top: 0;
+    width: 300px;
+    height: 240px;
+  }
+  .content img.dessert{
+    margin: 20px 0px 0 0;
+    width: 220px;
+    height: 180px;
+  }
 }
 
 /* HERO DESSERT */
@@ -437,8 +545,8 @@ nav {
 }
 
 .blog article:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 .blog article img {
